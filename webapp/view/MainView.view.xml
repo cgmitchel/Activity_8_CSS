@@ -1,0 +1,118 @@
+<mvc:View controllerName="com.training.exer1gaabucayanactivity6.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+ 
+    <Page id="page" title="{i18n>title}" floatingFooter="true">
+        <VBox id="idVBox" class="sapUiSmallMargin">
+            <f:SimpleForm
+                id="idSimpleForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                title="{i18n>detailsTitle}"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false">
+ 
+                <f:content>
+                    <!-- First Name -->
+                    <Label id="idLblFName" text="{i18n>firstNameLbl}" />
+                    <Input id="idInpFName" />
+ 
+                    <!-- Last Name -->
+                    <Label id="idLblLName" text="{i18n>lastNameLbl}" />
+                    <Input id="idInpLName" />
+ 
+                    <!-- Mode of Payment -->
+                    <Label id="idLblMOP" text="{i18n>modeOfPaymentLbl}" />
+                        <Select id="idSelMOP" forceSelection="false" change="onChangeMOP">
+                            <items>
+                                <core:Item id="itemCOD" key="COD" text="Cash on Delivery" />
+                                <core:Item id="itemCC" key="CC" text="Credit Card" />
+                                <core:Item id="itemGCASH" key="GCASH" text="Gcash" />
+                            </items>
+                        </Select>
+ 
+                    <!-- Conditional Fields -->
+                    <Label id="idLblPhone" text="{i18n>mobileNumberLbl}" visible="false"/>
+                    <Input id="idInputPhone" value="" visible="false"/>
+ 
+                    <Label id="idLblCC" text="{i18n>creditCardLbl}" visible="false"/>
+                    <Input id="idInputCC" value="" visible="false"/>
+                </f:content>
+            </f:SimpleForm>
+
+            <!-- <core:Fragment fragmentName="com.training.exer1gaabucayanactivity6.fragment.ShoppingCart" type="XML" />
+-->
+            <!-- 🛒 Shopping Cart Table -->
+            <Table id="idTableSCart1" inset="false">
+                <headerToolbar>
+                    <OverflowToolbar id="idOFT1">
+                        <content>
+                            <Title id="idTableTitleSCart" text="{i18n>shoppingCartTitle}" />
+                            <ToolbarSpacer id="idTSpacer"/>
+                            <Button
+                                id="idBtnAddItems"
+                                icon="sap-icon://cart-4"
+                                text="{i18n>addToCartBtn}"
+                                tooltip="{i18n>addToCartBtn}"
+                                press="onAddItem"/>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+ 
+               <columns>
+                <Column id="colItem">
+                    <Text id="txtItem" text="Item" />
+                </Column>
+                <Column id="colQuantity">
+                    <Text id="txtQuantity" text="Quantity" />
+                </Column>
+                 <Column id="colPrice">
+                     <Text id="txtPrice" text="Price" />
+                </Column>
+            </columns>
+ 
+                <items>
+                    <ColumnListItem id="cli1" vAlign="Middle">
+                        <cells>
+                        <Text id="txtProduct1" text="iPhone 14 Pro Max" />
+                        <Text id="txtQty1" text="2" />
+                        <Text id="txtPrice1" text="$2000" />
+                        </cells>
+                    </ColumnListItem>
+
+                    <ColumnListItem id="cli2" vAlign="Middle">
+                         <cells>
+                         <Text id="txtProduct2" text="Louis Vuitton Speedy" />
+                         <Text id="txtQty2" text="1" />
+                         <Text id="txtPrice2" text="$14000" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </VBox>
+ 
+        <!-- ✅ Floating Footer -->
+        <footer>
+            <Toolbar id="idFooterToolbar">
+                <ToolbarSpacer id="idTSpacerFooter" />
+                <Button
+                    id="idBtnCheckout"
+                    text="{i18n>checkoutBtn}"
+                    tooltip="{i18n>checkoutBtn}"
+                    press="onPressCheckout"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
