@@ -1,1 +1,9 @@
 /* Enter your custom styles here */
+ 
+.header .sapMIBar-CTX .sapMTitle {
+color: hwb(134 2% 55%);
+text-shadow: none;
+}
+html.sap-desktop .sapMIBar.sapMFooter-CTX {
+background-color: hsla(118, 91%, 50%, 0.872);
+}
